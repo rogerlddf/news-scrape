@@ -1,0 +1,43 @@
+
+<section class="comment-s1">
+<div class="row wrap">
+  <div class="col">
+  <h3>{{article.title}}</h3>
+  <div class="article-cont">
+  <p>{{body}}</p>
+  </div>
+  </div>
+</div>
+</section>
+
+<section class="comment-s2">
+<div class="row">
+  <div class="col">
+    <h2>Leave A Comment</h2>
+<form action="/comment/{{article._id}}" method="POST" >
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input id="author-inp" type="text" placeholder="Bob" name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comment</label>
+    <input id="comment-input" type="text" placeholder="Comment" name="comment" class="form-control">
+  </div>
+  <button  class="btn add-comment-button " type="submit" value="Submit">Submit</button >
+</form>
+</div>
+<div class="col">
+  <h2>Comments:</h2>
+    {{#if article.comment}}
+    {{#each article.comment}}
+    <div class="card">
+      <p id="author">{{name}}</p>
+      <p>{{body}}<p>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>No Comments Yet.</p>
+    {{/if}}
+</div>
+</div>
+</section>

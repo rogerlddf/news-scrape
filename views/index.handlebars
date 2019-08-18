@@ -1,0 +1,23 @@
+
+
+<section class="section-1">
+<div>
+  <h1>Read the Latest News</h1>
+  <a class=" btn" href="/scrape">Scrape</a>
+  
+</div>
+</section>
+<section class="section-2">
+<div class="row wrap">
+  <div class="col sm">
+    {{#each article}}
+    <div class="card">
+      <h5 class="card-title">{{this.title}}</h5>
+      <a href="/readArticle/{{this._id}}" class="btn" id="btnSignUp">Read Article</a>
+
+    </div>
+
+    {{/each}}
+  </div>
+</div>
+</section>
